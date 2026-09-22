@@ -1,18 +1,18 @@
 # Personal Website
 
-A starter website for IAT 806 students. It's a home page, a **Projects** page, and an **IAT 806** page where you add a folder for each thing you hand in.
+A starter website for IAT 806 students. A home page, a **Projects** page, and an **IAT 806** page where you add a folder for each thing you hand in.
 
-You put it on GitHub Pages once, and from then on every time you push a change the live site updates on its own.
+Set it up once. After that, every change you push goes live on its own.
 
 ```
 personal-website/
 ├── index.html                      home page — who you are
-├── style.css                       all the styling for every page
+├── style.css                       styles for every page
 ├── README.md                       this file
 └── projects/
-    ├── index.html                  list of courses and projects
+    ├── index.html                  your courses and projects
     └── iat-806/
-        ├── index.html              list of your IAT 806 submissions
+        ├── index.html              your IAT 806 submissions
         └── lab-01/                 one submission = one folder
             ├── index.html
             └── sketch.js
@@ -22,51 +22,46 @@ personal-website/
 
 ## 1. Make your own copy
 
-1. At the top of [this repository on GitHub](https://github.com/IAT-806/personal-website), click the green **Use this template** button, then **Create a new repository**.
-2. **Owner:** your own account (not IAT-806).
-3. **Repository name:** `personal-website` is fine. If you name it `your-username.github.io` instead — using your actual GitHub username — your site gets the shorter address `https://your-username.github.io`.
-4. Set it to **Public**. GitHub Pages needs public to work on a free account.
+1. At the top of [this repository](https://github.com/IAT-806/personal-website), click the green **Use this template** button, then **Create a new repository**.
+2. **Owner:** your own account. Not IAT-806.
+3. **Repository name:** your GitHub username followed by `.github.io`. If your username is `jsmith`, name the repo `jsmith.github.io`. Type it exactly — this name is what makes the site publish.
+4. Set it to **Public**. Pages needs public on a free account.
 5. Click **Create repository**.
 
-Now get it onto your computer. In VS Code: **View → Command Palette** (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows), type `Git: Clone`, paste the URL of *your* new repository, and pick a folder to put it in.
+Your site is now live at:
+
+```
+https://your-username.github.io
+```
+
+Give it two or three minutes the first time. There is nothing to turn on — a repo named `your-username.github.io` publishes by itself.
+
+If nothing loads after five minutes, go to **Settings → Pages** in your repo and check that **Source** is **Deploy from a branch**, branch **main**, folder **/ (root)**. Also check your repo name for typos. `jsmith.github.io.io` and `Jsmith.github.io` will not work.
+
+You get one of these per account. The next site you make will be a normal repo — see [Any repo can be a website](#any-repo-can-be-a-website) at the bottom.
 
 ---
 
-## 2. Turn on GitHub Pages
+## 2. Get it onto your computer
 
-In **your** repository on github.com:
-
-1. Click **Settings** (the tab along the top of the repo).
-2. In the left sidebar, click **Pages**.
-3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-4. Under **Branch**, pick **main**, leave the folder as **/ (root)**, and click **Save**.
-
-Wait a minute or two, then reload that Settings → Pages screen. A box appears at the top with your site's address:
-
-```
-https://your-username.github.io/personal-website/
-```
-
-That's your website. It's public — anyone with the link can see it.
-
-**If you get a 404:** give it another few minutes; the first build is slow. After that, check that your home page file is named exactly `index.html`, all lowercase, and sits at the top level of the repo.
+In VS Code, open the Command Palette — `Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows — type `Git: Clone`, paste the URL of **your** repo, and pick a folder.
 
 ---
 
 ## 3. Change the site
 
-Everything is plain HTML and CSS. Open a file in VS Code, change it, save it.
+It's plain HTML and CSS. Open a file, change it, save it.
 
-Start with `index.html`. Look for the comments that say `EDIT ME` — they mark the parts meant for you:
+Start with `index.html`. Look for the `EDIT ME` comments:
 
 ```html
 <!-- EDIT ME: your name -->
 <a class="site-name" href="index.html">Your Name</a>
 ```
 
-Replace `Your Name` with your name. Do the same in `projects/index.html`, `projects/iat-806/index.html`, and any submission pages, so the whole site says the same thing.
+Put your name in. Do the same in `projects/index.html`, `projects/iat-806/index.html`, and `projects/iat-806/lab-01/index.html`.
 
-To change how it looks, open `style.css`. The colors are all at the top:
+To change how it looks, open `style.css`. The colors are at the top:
 
 ```css
 :root {
@@ -78,34 +73,32 @@ To change how it looks, open `style.css`. The colors are all at the top:
 }
 ```
 
-Change `--accent` to a different color and every link on every page changes with it. Make the site yours — different colors, a different font, a different layout. Nothing here is precious.
+Change `--accent` and every link on every page changes with it. Make the site yours. Nothing here is precious.
 
-### See your changes before you publish
+### Look at it before you publish
 
-Don't push and wait to find out if it worked. Look at it locally:
+1. Install the **Live Server** extension in VS Code.
+2. Right-click `index.html` → **Open with Live Server**.
 
-1. Install the **Live Server** extension in VS Code (you already did this in Week 1).
-2. Right-click `index.html` in the file list → **Open with Live Server**.
+The site opens from your own computer. Save a file and the page reloads itself.
 
-Your browser opens the site from your own computer. Save a file and the page refreshes by itself.
+### Publish
 
-### Publish the changes
+Open the **Source Control** panel — the branching icon in the left bar.
 
-In VS Code's **Source Control** panel (the branching icon in the left bar):
-
-1. Type a short message about what you changed — "added lab 01".
+1. Type what you changed: "added lab 01".
 2. Click **Commit**.
-3. Click **Sync Changes** to push it to GitHub.
+3. Click **Sync Changes**.
 
-Your live site updates within a minute or two. If it looks unchanged, hard-refresh the page: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows).
+The live site updates in a minute or two. If it looks the same, hard-refresh: `Cmd+Shift+R` or `Ctrl+Shift+R`.
 
 ---
 
 ## 4. Add a submission
 
-Every thing you hand in is one folder inside `projects/iat-806/`.
+Each thing you hand in is one folder inside `projects/iat-806/`.
 
-**Step 1 — make the folder.** Copy the whole `lab-01/` folder and rename the copy after the assignment. Use lowercase, and dashes instead of spaces:
+**Make the folder.** Copy `lab-01/` and rename the copy. Lowercase, dashes instead of spaces:
 
 ```
 projects/iat-806/
@@ -115,11 +108,11 @@ projects/iat-806/
 └── final-project/
 ```
 
-**Step 2 — put your work in it.** Replace the `sketch.js` inside with your own, and edit that folder's `index.html`: the title, the description, your notes. If your sketch loads an image or a sound, put that file in the same folder too, and refer to it by name alone — `loadImage("cat.jpg")`, not a long path.
+**Put your work in it.** Replace `sketch.js` with yours. Edit that folder's `index.html` — the title, the description, your notes. Images and sounds go in the same folder, and you load them by name alone: `loadImage("cat.jpg")`, not a long path.
 
-Each folder has to stand on its own. Open its `index.html` with Live Server and the sketch should run, with nothing from any other folder needed.
+Each folder has to run on its own. Open its `index.html` with Live Server. The sketch should work with nothing from any other folder.
 
-**Step 3 — link to it.** Open `projects/iat-806/index.html` and find the list:
+**Link to it.** Open `projects/iat-806/index.html` and find the list:
 
 ```html
 <ul class="card-list">
@@ -132,21 +125,21 @@ Each folder has to stand on its own. Open its `index.html` with Live Server and 
 </ul>
 ```
 
-Copy one `<li>` block, paste it below, and change the three things: the folder name in `href`, the title, and the description. A folder nobody linked to is a folder nobody will find.
+Copy one `<li>` block, paste it below, change three things: the folder name in `href`, the title, the description. Nobody finds a folder you didn't link to.
 
-**Step 4 — commit and sync.** Your submission is now live at:
+**Commit and sync.** Your work is live at:
 
 ```
-https://your-username.github.io/personal-website/projects/iat-806/lab-02/
+https://your-username.github.io/projects/iat-806/lab-02/
 ```
 
 ---
 
-## Things that trip people up
+## When it breaks
 
-**The page is blank, or the sketch doesn't show.** Open your browser's console — right-click the page → **Inspect** → **Console** tab — and read the red error. It usually names the file it couldn't find or the line that broke.
+**Blank page, or no sketch.** Right-click the page → **Inspect** → **Console**. Read the red error. It names the file it couldn't find or the line that broke.
 
-**The styling disappeared on one page.** That page's link to `style.css` is pointing at the wrong place. `../` means "go up one folder", and you need one for every folder you're inside:
+**One page lost its styling.** Its link to `style.css` points at the wrong place. `../` means go up one folder. You need one for every folder you're inside:
 
 | Page | Link |
 |---|---|
@@ -155,17 +148,36 @@ https://your-username.github.io/personal-website/projects/iat-806/lab-02/
 | `projects/iat-806/index.html` | `../../style.css` |
 | `projects/iat-806/lab-01/index.html` | `../../../style.css` |
 
-**It works locally but not on GitHub Pages.** Almost always capitalization. Your computer thinks `Sketch.js` and `sketch.js` are the same file; the GitHub Pages server does not. Keep every filename lowercase and make the names in your HTML match exactly.
+**Works on your computer, broken on the live site.** Capitalization. Your computer treats `Sketch.js` and `sketch.js` as the same file. The server does not. Keep filenames lowercase and make your HTML match exactly.
 
-**Spaces in filenames.** `my sketch.js` will cause you trouble. Use `my-sketch.js`.
+**Spaces in filenames.** `my sketch.js` will cause you trouble. Write `my-sketch.js`.
 
 ---
 
 ## Handing work in
 
-Unless an assignment says otherwise, submit **two links** on Canvas:
+Unless the assignment says otherwise, submit two links on Canvas:
 
-- your live page — `https://your-username.github.io/personal-website/projects/iat-806/lab-02/`
-- your repository — `https://github.com/your-username/personal-website`
+- your live page — `https://your-username.github.io/projects/iat-806/lab-02/`
+- your repo — `https://github.com/your-username/your-username.github.io`
 
-Open the live link in a private/incognito window before you submit. If it loads there, it loads for everyone.
+Open the live link in a private window first. If it loads there, it loads for anyone.
+
+---
+
+## Any repo can be a website
+
+The `username.github.io` trick only works once. Any other repo can still be a website, you just turn it on yourself:
+
+1. Go to that repo's **Settings** tab.
+2. Click **Pages** in the left sidebar.
+3. **Source:** **Deploy from a branch**.
+4. **Branch:** **main**, folder **/ (root)**. Click **Save**.
+
+Wait a minute and the address appears at the top of that same screen:
+
+```
+https://your-username.github.io/repo-name/
+```
+
+The repo needs to be public, and it needs an `index.html` at the top level. That's it — a sketch, a game, a class project, anything.
