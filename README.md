@@ -1,8 +1,8 @@
 # Personal Website
 
-A starter website for IAT 806 students. A home page, a **Projects** page, and an **IAT 806** page where you add a folder for each thing you hand in.
+This is a starter website for IAT 806 students. A home page, a **Projects** page, and an **IAT 806** page where you add a folder for each thing you hand in. If you know how to change things, please do. If you have a website already, you can just use that. Just create a new folder for IAT806 for now.
 
-Set it up once. After that, every change you push goes live on its own.
+I hope that this can become a personal portfolio for you. So update it regularly. 
 
 ```
 personal-website/
